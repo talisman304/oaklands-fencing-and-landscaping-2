@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oaklands Fencing & Landscaping | Free Estimates</title>
+  <meta name="description" content="Oaklands Fencing & Landscaping — fencing, landscaping, patios, pathways, turfing, artificial grass, decking and more. Call today for a free estimate and advice." />
+  <meta name="theme-color" content="#0f3d2e" />
+
+  <!-- Font (Manrope) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#07140f;
+      --panel:#0b1f17;
+      --card:#0e251c;
+      --text:#eaf3ee;
+      --muted:#b7c7be;
+      --brand:#2fb86e;
+      --brand2:#19a4c9;
+      --line:rgba(255,255,255,.10);
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Manrope", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(47,184,110,.24), transparent 60%),
+        radial-gradient(1000px 560px at 90% 10%, rgba(25,164,201,.18), transparent 55%),
+        radial-gradient(900px 520px at 50% 120%, rgba(47,184,110,.12), transparent 60%),
+        var(--bg);
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+    .pill{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      font-size:13px; color:var(--muted);
+    }
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(7,20,15,.55);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; min-width:0;
+    }
+    .logo{
+      width:42px; height:42px; border-radius:12px;
+      background:
+        radial-gradient(12px 12px at 30% 30%, rgba(255,255,255,.55), transparent 60%),
+        linear-gradient(135deg, rgba(47,184,110,.95), rgba(25,164,201,.70));
+      box-shadow: 0 10px 26px rgba(0,0,0,.35);
+      position:relative;
+    }
+    .logo:after{
+      content:"";
+      position:absolute; inset:9px 8px 10px 10px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,.35);
+      opacity:.55;
+    }
+    .brand h1{
+      margin:0; font-size:14px; letter-spacing:.08em; text-transform:uppercase;
+      color:rgba(255,255,255,.92);
+      line-height:1.1;
+      white-space:nowrap;
+    }
+    .brand .sub{
+      margin:2px 0 0; font-size:12px; color:var(--muted); white-space:nowrap;
+    }
+    nav{
+      display:flex; gap:14px; align-items:center;
+      flex-wrap:wrap; justify-content:flex-end;
+    }
+    .navlink{
+      font-size:13px; color:rgba(255,255,255,.85);
+      padding:8px 10px; border-radius:12px;
+      border:1px solid transparent;
+    }
+    .navlink:hover{border-color:rgba(255,255,255,.10); background:rgba(255,255,255,.06)}
+    .cta{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 12px;
+      border-radius:14px;
+      background:linear-gradient(135deg, rgba(47,184,110,.95), rgba(25,164,201,.75));
+      color:#07140f; font-weight:800;
+      border:0;
+      box-shadow: 0 18px 40px rgba(0,0,0,.35);
+      font-size:13px;
+      white-space:nowrap;
+    }
+    .cta:hover{filter:saturate(1.05) brightness(1.03)}
+    .smallhide{display:none}
+    @media (min-width: 860px){
+      .smallhide{display:inline-flex}
+    }
+
+    /* Hero */
+    .hero{
+      padding:26px 0 10px;
+    }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:16px;
+      align-items:stretch;
+    }
+    @media (min-width: 980px){
+      .heroGrid{grid-template-columns: 1.1fr .9fr}
+    }
+    .glass{
+      border-radius: var(--radius2);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      border: 1px solid rgba(255,255,255,.10);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+    }
+    .heroCard{
+      padding:18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .heroCard:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(420px 220px at 20% 15%, rgba(47,184,110,.25), transparent 60%),
+        radial-gradient(420px 220px at 80% 10%, rgba(25,164,201,.18), transparent 60%);
+      pointer-events:none;
+    }
+    .heroCard > *{position:relative}
+    .heroTitle{
+      margin:14px 0 8px;
+      font-size: clamp(28px, 5vw, 46px);
+      line-height:1.05;
+      letter-spacing:-0.02em;
+    }
+    .heroTitle span{
+      background: linear-gradient(90deg, rgba(47,184,110,1), rgba(25,164,201,1));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .heroText{
+      margin:0 0 14px;
+      color:rgba(234,243,238,.86);
+      font-size:15px;
+      line-height:1.6;
+      max-width: 62ch;
+    }
+    .heroActions{
+      display:flex; flex-direction:column; gap:10px;
+      margin-top:14px;
+    }
+    @media (min-width: 560px){
+      .heroActions{flex-direction:row; align-items:center}
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      color:rgba(255,255,255,.92);
+      font-weight:700;
+      font-size:14px;
+    }
+    .btn:hover{background:rgba(255,255,255,.09)}
+    .btnPrimary{
+      border:0;
+      background:linear-gradient(135deg, rgba(47,184,110,.96), rgba(25,164,201,.78));
+      color:#06110d;
+      box-shadow: 0 18px 40px rgba(0,0,0,.35);
+    }
+    .btnPrimary:hover{filter:saturate(1.06) brightness(1.04)}
+    .metaRow{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top:14px;
+    }
+    .meta{
+      padding:10px 12px;
+      border-radius: 16px;
+      background:rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.10);
+      color:rgba(255,255,255,.86);
+      font-size:13px;
+      display:flex; gap:10px; align-items:center;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: rgba(47,184,110,.95);
+      box-shadow: 0 0 0 6px rgba(47,184,110,.12);
+      flex:0 0 auto;
+    }
+
+    /* Side card */
+    .sideCard{
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      overflow:hidden;
+    }
+    .photo{
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      overflow:hidden;
+      background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      aspect-ratio: 16 / 11;
+      position:relative;
+    }
+    .photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      filter:saturate(1.05) contrast(1.02);
+    }
+    .photoBadge{
+      position:absolute; left:12px; bottom:12px;
+      padding:8px 10px;
+      border-radius: 999px;
+      background:rgba(7,20,15,.55);
+      border:1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      font-weight:800;
+      font-size:12px;
+    }
+    .contactList{
+      display:grid;
+      gap:10px;
+    }
+    .contactItem{
+      padding:12px 12px;
+      border-radius: 16px;
+      background:rgba(0,0,0,.16);
+      border:1px solid rgba(255,255,255,.10);
+      display:flex; gap:12px; align-items:flex-start;
+    }
+    .icon{
+      width:34px; height:34px; border-radius: 12px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      display:flex; align-items:center; justify-content:center;
+      flex:0 0 auto;
+    }
+    .contactItem .label{font-size:12px; color:var(--muted); margin:0}
+    .contactItem .value{margin:2px 0 0; font-weight:800}
+    .contactItem a:hover{text-decoration:underline}
+
+    /* Sections */
+    section{padding:20px 0}
+    .sectionTitle{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:14px;
+      margin-bottom:12px;
+    }
+    .sectionTitle h2{
+      margin:0;
+      font-size:20px;
+      letter-spacing:-0.01em;
+    }
+    .sectionTitle p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.4;
+    }
+
+    /* Services */
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:12px;
+    }
+    @media (min-width: 720px){
+      .grid{grid-template-columns: repeat(3, 1fr)}
+    }
+    .card{
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      padding:14px;
+      box-shadow: 0 12px 34px rgba(0,0,0,.25);
+      position:relative;
+      overflow:hidden;
+    }
+    .card:before{
+      content:"";
+      position:absolute; inset:-1px;
+      background: radial-gradient(300px 180px at 30% -10%, rgba(47,184,110,.18), transparent 55%);
+      opacity:.9;
+      pointer-events:none;
+    }
+    .card > *{position:relative}
+    .card h3{margin:0 0 8px; font-size:15px}
+    .card p{margin:0; color:rgba(234,243,238,.80); font-size:13px; line-height:1.55}
+    .chips{
+      display:flex; flex-wrap:wrap; gap:8px;
+      margin-top:10px;
+    }
+    .chip{
+      font-size:12px;
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.10);
+      color:rgba(255,255,255,.86);
+    }
+
+    /* Gallery */
+    .gallery{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    @media (min-width: 860px){
+      .gallery{grid-template-columns: repeat(4, 1fr)}
+    }
+    .gItem{
+      border-radius: 18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      aspect-ratio: 1 / 1;
+      position:relative;
+    }
+    .gItem img{
+      width:100%; height:100%;
+      object-fit:cover;
+      display:block;
+      filter:saturate(1.05) contrast(1.03);
+    }
+    .gItem:after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,.35));
+      pointer-events:none;
+    }
+
+    /* Reviews */
+    .reviewsWrap{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:12px;
+    }
+    @media (min-width: 980px){
+      .reviewsWrap{grid-template-columns: 1.05fr .95fr}
+    }
+    .quote{
+      padding:16px;
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .quote p{margin:0; color:rgba(234,243,238,.86); line-height:1.7}
+    .quote .who{margin-top:10px; color:var(--muted); font-size:13px}
+    .embed{
+      border-radius: var(--radius2);
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.15);
+      min-height: 260px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      text-align:center;
+      color:rgba(234,243,238,.82);
+    }
+    .embed code{
+      display:block;
+      margin-top:10px;
+      padding:10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      color:rgba(234,243,238,.82);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size:12px;
+      overflow:auto;
+      max-width:100%;
+    }
+
+    /* Contact */
+    .contactGrid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:12px;
+    }
+    @media (min-width: 980px){
+      .contactGrid{grid-template-columns: 1fr 1fr}
+    }
+    form{
+      display:grid;
+      gap:10px;
+    }
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+      color:rgba(255,255,255,.92);
+      outline:none;
+      font-family: inherit;
+      font-size:14px;
+    }
+    textarea{min-height:120px; resize:vertical}
+    input::placeholder, textarea::placeholder{color: rgba(183,199,190,.75)}
+    .formRow{
+      display:grid; gap:10px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 560px){
+      .formRow{grid-template-columns: 1fr 1fr}
+    }
+    .fine{
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.5;
+    }
+
+    /* Footer */
+    footer{
+      padding:22px 0 26px;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:rgba(183,199,190,.9);
+      font-size:13px;
+    }
+    .foot{
+      display:flex; gap:12px; flex-wrap:wrap;
+      justify-content:space-between; align-items:center;
+    }
+
+    /* Floating buttons (mobile-first) */
+    .floatbar{
+      position:fixed;
+      left:12px; right:12px; bottom:12px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      z-index:60;
+    }
+    @media (min-width: 860px){
+      .floatbar{
+        right:auto; left:18px; bottom:18px;
+        width: 320px;
+        grid-template-columns: 1fr;
+      }
+    }
+    .float{
+      border-radius: 18px;
+      padding:12px 12px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(7,20,15,.62);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 18px 50px rgba(0,0,0,.45);
+      display:flex; align-items:center; justify-content:center; gap:10px;
+      font-weight:900;
+    }
+    .float.primary{
+      background: linear-gradient(135deg, rgba(47,184,110,.95), rgba(25,164,201,.75));
+      color:#06110d;
+      border:0;
+    }
+
+    /* Anchor offset */
+    .anchor{scroll-margin-top:90px}
+  </style>
+</head>
+
+<body>
+  <!-- Sticky header -->
+  <header>
+    <div class="wrap">
+      <div class="topbar">
+        <a class="brand" href="#top" aria-label="Oaklands Fencing & Landscaping">
+          <div class="logo" aria-hidden="true"></div>
+          <div style="min-width:0">
+            <h1>OAKLANDS</h1>
+            <div class="sub">Fencing &amp; Landscaping</div>
+          </div>
+        </a>
+
+        <nav aria-label="Primary">
+          <a class="navlink" href="#services">Services</a>
+          <a class="navlink" href="#gallery">Work</a>
+          <a class="navlink" href="#reviews">Reviews</a>
+          <a class="navlink" href="#contact">Contact</a>
+          <a class="cta smallhide" href="tel:01403740027">Call: 01403 740027</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="top" class="hero">
+    <div class="wrap">
+      <div class="heroGrid">
+        <div class="glass heroCard">
+          <span class="pill">
+            <span class="dot" aria-hidden="true"></span>
+            Free estimate &amp; advice • Fast response
+          </span>
+
+          <h2 class="heroTitle">
+            High-quality <span>fencing</span>, <span>landscaping</span> and garden upgrades — done properly.
+          </h2>
+
+          <p class="heroText">
+            Oaklands Fencing &amp; Landscaping delivers tidy workmanship, clear communication, and a finish that lasts.
+            Contact us today to speak to a knowledgeable team for a free estimate and advice.
+          </p>
+
+          <div class="heroActions">
+            <a class="btn btnPrimary" href="#contact">Get a Free Estimate</a>
+            <a class="btn" href="tel:07780133774">Call Mobile: 07780 133774</a>
+            <a class="btn" href="https://wa.me/447780133774" target="_blank" rel="noopener">WhatsApp Us</a>
+          </div>
+
+          <div class="metaRow" aria-label="Quick facts">
+            <div class="meta"><span class="dot" aria-hidden="true"></span>Fencing • Landscaping • Patios</div>
+            <div class="meta"><span class="dot" aria-hidden="true"></span>Artificial grass • Turfing • Decking</div>
+            <div class="meta"><span class="dot" aria-hidden="true"></span>Jet washing • Gravelling • Sleepers</div>
+          </div>
+        </div>
+
+        <aside class="glass sideCard" aria-label="Contact details">
+          <div class="photo">
+            <!-- Replace src with your own best hero image URL (fence / patio / garden). -->
+            <img src="https://images.unsplash.com/photo-1598301257982-0cf014dabbcd?auto=format&fit=crop&w=1200&q=80" alt="Garden landscaping example photo" />
+            <div class="photoBadge">Free Estimate &amp; Advice</div>
+          </div>
+
+          <div class="contactList">
+            <div class="contactItem">
+              <div class="icon" aria-hidden="true">☎</div>
+              <div>
+                <p class="label">Telephone</p>
+                <p class="value"><a href="tel:01403740027">01403 740027</a></p>
+              </div>
+            </div>
+
+            <div class="contactItem">
+              <div class="icon" aria-hidden="true">📱</div>
+              <div>
+                <p class="label">Mobile</p>
+                <p class="value"><a href="tel:07780133774">07780 133774</a></p>
+              </div>
+            </div>
+
+            <div class="contactItem">
+              <div class="icon" aria-hidden="true">✉</div>
+              <div>
+                <p class="label">Email</p>
+                <p class="value">
+                  <a href="mailto:oaklandsfencingandlandscaping@gmail.com">oaklandsfencingandlandscaping@gmail.com</a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="fine">
+            Prefer WhatsApp? Use the button below for quick photos and a faster quote.
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Services -->
+  <section id="services" class="anchor">
+    <div class="wrap">
+      <div class="sectionTitle">
+        <div>
+          <h2>Services</h2>
+          <p>Everything listed below is taken from the company information you provided.</p>
+        </div>
+        <span class="pill">Quality finish • Clean &amp; tidy • Reliable</span>
+      </div>
+
+      <div class="grid" role="list">
+        <div class="card" role="listitem">
+          <h3>Fencing</h3>
+          <p>New fence installation and replacement to improve privacy, security and kerb appeal.</p>
+          <div class="chips">
+            <span class="chip">Panels</span><span class="chip">Posts</span><span class="chip">Gates</span>
+          </div>
+        </div>
+
+        <div class="card" role="listitem">
+          <h3>Landscaping</h3>
+          <p>Garden improvements, re-designs and upgrades with a focus on a clean, professional finish.</p>
+          <div class="chips">
+            <span class="chip">Edging</span><span class="chip">Levels</span><span class="chip">Finishing</span>
+          </div>
+        </div>
+
+        <div class="card" role="listitem">
+          <h3>Patios &amp; Pathways</h3>
+          <p>Hard landscaping that looks sharp and stands up to daily use and weather.</p>
+          <div class="chips">
+            <span class="chip">Patios</span><span class="chip">Pathways</span><span class="chip">Slabs</span>
+          </div>
+        </div>
+
+        <div class="card" role="listitem">
+          <h3>Turfing &amp; Artificial Grass</h3>
+          <p>Fresh turfing or low-maintenance artificial grass for an always-neat garden.</p>
+          <div class="chips">
+            <span class="chip">Turfing</span><span class="chip">Artificial grass</span>
+          </div>
+        </div>
+
+        <div class="card" role="listitem">
+          <h3>Hedge Trimming</h3>
+          <p>Keep hedges and borders neat, healthy and well-shaped throughout the year.</p>
+          <div class="chips">
+            <span class="chip">Trimming</span><span class="chip">Shaping</span><span class="chip">Clear-up</span>
+          </div>
+        </div>
+
+        <div class="card" role="listitem">
+          <h3>Gravelling, Sleepers &amp; Decking</h3>
+          <p>Smart, practical upgrades to create usable space and improve the look of your garden.</p>
+          <div class="chips">
+            <span class="chip">Gravelling</span><span class="chip">Sleepers</span><span class="chip">Decking</span>
+          </div>
+        </div>
+
+        <div class="card" role="listitem">
+          <h3>Jet Washing</h3>
+          <p>Bring patios, paths and driveways back to life with a thorough clean.</p>
+          <div class="chips">
+            <span class="chip">Patios</span><span class="chip">Paths</span><span class="chip">Driveways</span>
+          </div>
+        </div>
+
+        <div class="card" role="listitem">
+          <h3>Free Estimates</h3>
+          <p>Get a clear quote and practical advice before any work starts.</p>
+          <div class="chips">
+            <span class="chip">No obligation</span><span class="chip">Fast response</span>
+          </div>
+        </div>
+
+        <div class="card" role="listitem">
+          <h3>Ongoing Support</h3>
+          <p>Questions after the job? We’re easy to reach and happy to help.</p>
+          <div class="chips">
+            <span class="chip">Call</span><span class="chip">Email</span><span class="chip">WhatsApp</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="anchor">
+    <div class="wrap">
+      <div class="sectionTitle">
+        <div>
+          <h2>Recent Work</h2>
+          <p>Replace these images with your own projects for best conversion.</p>
+        </div>
+        <a class="pill" href="#contact">Request a quote →</a>
+      </div>
+
+      <div class="gallery" aria-label="Project gallery">
+        <!-- Replace the image URLs below with your own -->
+        <div class="gItem"><img alt="Example fencing project" src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=900&q=80"></div>
+        <div class="gItem"><img alt="Example patio project" src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=900&q=80"></div>
+        <div class="gItem"><img alt="Example turf project" src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=80"></div>
+        <div class="gItem"><img alt="Example pathway project" src="https://images.unsplash.com/photo-1558904541-efa843bfb3b7?auto=format&fit=crop&w=900&q=80"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="anchor">
+    <div class="wrap">
+      <div class="sectionTitle">
+        <div>
+          <h2>Reviews</h2>
+          <p>Add your Google / Facebook review embed for maximum trust.</p>
+        </div>
+        <span class="pill">Social proof boosts enquiries</span>
+      </div>
+
+      <div class="reviewsWrap">
+        <div class="quote">
+          <p>
+            “Professional, friendly and the job was finished to a really high standard. The garden looks completely different.”
+          </p>
+          <div class="who">— Example review (replace with real customer feedback)</div>
+
+          <hr style="border:0;border-top:1px solid rgba(255,255,255,.08); margin:14px 0">
+
+          <p>
+            “Great communication from start to finish. Tidy work and very reliable.”
+          </p>
+          <div class="who">— Example review (replace with real customer feedback)</div>
+        </div>
+
+        <div class="embed">
+          <div>
+            <strong>Paste your review embed code here</strong>
+            <div style="margin-top:8px; color: rgba(183,199,190,.9);">
+              If you have a Google Reviews widget or Facebook page plugin, replace this box with the iframe/script.
+            </div>
+            <code>
+&lt;!-- Replace this div with your Google/Facebook reviews embed --&gt;
+&lt;iframe src="..." width="100%" height="320" style="border:0;" loading="lazy"&gt;&lt;/iframe&gt;
+            </code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="anchor">
+    <div class="wrap">
+      <div class="sectionTitle">
+        <div>
+          <h2>Get a Free Estimate</h2>
+          <p>Call, WhatsApp, or send a message. The form opens your email app with the details filled in.</p>
+        </div>
+        <span class="pill">Tel: 01403 740027 • Mobile: 07780 133774</span>
+      </div>
+
+      <div class="contactGrid">
+        <div class="card">
+          <h3 style="margin-top:0">Quick Contact</h3>
+
+          <div class="contactList" style="margin-top:10px">
+            <div class="contactItem">
+              <div class="icon" aria-hidden="true">☎</div>
+              <div>
+                <p class="label">Telephone</p>
+                <p class="value"><a href="tel:01403740027">01403 740027</a></p>
+              </div>
+            </div>
+
+            <div class="contactItem">
+              <div class="icon" aria-hidden="true">📱</div>
+              <div>
+                <p class="label">Mobile</p>
+                <p class="value"><a href="tel:07780133774">07780 133774</a></p>
+              </div>
+            </div>
+
+            <div class="contactItem">
+              <div class="icon" aria-hidden="true">💬</div>
+              <div>
+                <p class="label">WhatsApp</p>
+                <p class="value"><a href="https://wa.me/447780133774" target="_blank" rel="noopener">Message us on WhatsApp</a></p>
+              </div>
+            </div>
+
+            <div class="contactItem">
+              <div class="icon" aria-hidden="true">✉</div>
+              <div>
+                <p class="label">Email</p>
+                <p class="value"><a href="mailto:oaklandsfencingandlandscaping@gmail.com">oaklandsfencingandlandscaping@gmail.com</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="fine" style="margin-top:10px">
+            <strong>Service areas:</strong>
+            <span style="color: rgba(234,243,238,.85)">
+              Add your coverage here (e.g., towns/boroughs you serve). This line is intentionally editable.
+            </span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0">Message Form</h3>
+          <p style="margin:0 0 10px; color: rgba(234,243,238,.82);">
+            Fill this in and press “Send Email”. It will create an email to
+            <strong>oaklandsfencingandlandscaping@gmail.com</strong> with your details.
+          </p>
+
+          <form id="quoteForm">
+            <div class="formRow">
+              <input required name="name" placeholder="Your name" />
+              <input required name="phone" placeholder="Your phone number" inputmode="tel" />
+            </div>
+            <input name="address" placeholder="Postcode / area (optional)" />
+            <textarea required name="message" placeholder="What do you need done? (e.g., fence replacement, patio, turfing)"></textarea>
+
+            <button class="btn btnPrimary" type="submit">Send Email</button>
+            <div class="fine">
+              By sending, you agree Oaklands may contact you to provide an estimate and advice.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>© <span id="year"></span> Oaklands Fencing &amp; Landscaping. All rights reserved.</div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="navlink" href="tel:01403740027">Call</a>
+          <a class="navlink" href="https://wa.me/447780133774" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="navlink" href="mailto:oaklandsfencingandlandscaping@gmail.com">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating quick actions -->
+  <div class="floatbar" aria-label="Quick actions">
+    <a class="float primary" href="tel:01403740027">Call 01403 740027</a>
+    <a class="float" href="https://wa.me/447780133774" target="_blank" rel="noopener">WhatsApp 07780 133774</a>
+  </div>
+
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mailto form handler (no backend needed)
+    const form = document.getElementById("quoteForm");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const name = (data.get("name") || "").toString().trim();
+      const phone = (data.get("phone") || "").toString().trim();
+      const address = (data.get("address") || "").toString().trim();
+      const msg = (data.get("message") || "").toString().trim();
+
+      const subject = encodeURIComponent("Quote Request — Oaklands Fencing & Landscaping");
+      const bodyLines = [
+        "Quote request details:",
+        "",
+        `Name: ${name}`,
+        `Phone: ${phone}`,
+        address ? `Area/Postcode: ${address}` : null,
+        "",
+        "Message:",
+        msg,
+        "",
+        "Sent from the Oaklands website contact form."
+      ].filter(Boolean);
+
+      const body = encodeURIComponent(bodyLines.join("\n"));
+      window.location.href = `mailto:oaklandsfencingandlandscaping@gmail.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
