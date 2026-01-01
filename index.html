@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Oaklands Fencing & Landscaping | Free Estimates</title>
   <meta name="description" content="Oaklands Fencing & Landscaping — fencing, landscaping, patios, pathways, turfing, artificial grass, decking and more. Call today for a free estimate and advice." />
-  <meta name="theme-color" content="#070912" />
+  <meta name="theme-color" content="#ffffff" />
 
   <!-- Manrope -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,26 +14,25 @@
 
   <style>
     :root{
-      /* “Lovable-style” dark + neon + glass */
-      --bg0:#060710;
-      --bg1:#070a16;
-      --panel:rgba(255,255,255,.06);
-      --panel2:rgba(255,255,255,.045);
-      --stroke:rgba(255,255,255,.12);
-      --stroke2:rgba(255,255,255,.10);
-      --text:#eef2ff;
-      --muted:rgba(238,242,255,.72);
+      /* Minimal white / Apple-ish tokens */
+      --bg:#ffffff;
+      --bg2:#f6f7f8;
+      --card:#ffffff;
+      --text:#0b1220;
+      --muted:rgba(11,18,32,.70);
+      --line:rgba(11,18,32,.10);
 
-      --g1:#2bf5a6;     /* neon green */
-      --g2:#5cf1ff;     /* neon cyan */
-      --g3:#a98bff;     /* violet */
-      --g4:#ff6bd6;     /* pink */
+      --brand:#0a7a4a;     /* Oaklands green accent */
+      --brand2:#0b5f3a;
 
-      --shadow: 0 24px 80px rgba(0,0,0,.55);
-      --shadow2: 0 16px 46px rgba(0,0,0,.40);
-      --r16: 16px;
-      --r22: 22px;
-      --r28: 28px;
+      --shadow: 0 18px 60px rgba(0,0,0,.08);
+      --shadow2: 0 10px 30px rgba(0,0,0,.06);
+
+      --r12:12px;
+      --r16:16px;
+      --r20:20px;
+      --r28:28px;
+
       --max: 1120px;
     }
 
@@ -43,158 +42,90 @@
       margin:0;
       font-family:"Manrope", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
-      background: radial-gradient(1400px 700px at 15% -10%, rgba(43,245,166,.22), transparent 60%),
-                  radial-gradient(1200px 600px at 85% 10%, rgba(92,241,255,.18), transparent 58%),
-                  radial-gradient(900px 520px at 70% 110%, rgba(169,139,255,.14), transparent 60%),
-                  linear-gradient(180deg, var(--bg1), var(--bg0));
-      overflow-x:hidden;
-    }
-
-    /* Animated aurora bands */
-    .aurora{
-      position:fixed; inset:-20vh -20vw;
-      pointer-events:none;
-      z-index:-3;
       background:
-        radial-gradient(50% 40% at 20% 30%, rgba(43,245,166,.22), transparent 60%),
-        radial-gradient(55% 45% at 80% 25%, rgba(92,241,255,.18), transparent 62%),
-        radial-gradient(55% 45% at 55% 75%, rgba(169,139,255,.16), transparent 60%),
-        radial-gradient(40% 40% at 75% 80%, rgba(255,107,214,.10), transparent 60%);
-      filter: blur(28px);
-      opacity:.9;
-      animation: drift 14s ease-in-out infinite alternate;
-    }
-    @keyframes drift{
-      from{ transform: translate3d(-1.5%, -1.0%, 0) scale(1.02); }
-      to  { transform: translate3d( 1.5%,  1.0%, 0) scale(1.05); }
-    }
-
-    /* Subtle noise overlay */
-    .noise{
-      position:fixed; inset:0;
-      pointer-events:none;
-      z-index:-2;
-      opacity:.08;
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
-      mix-blend-mode: overlay;
+        radial-gradient(1200px 560px at 20% -10%, rgba(10,122,74,.10), transparent 60%),
+        radial-gradient(900px 520px at 90% 0%, rgba(10,122,74,.07), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
     }
 
     a{color:inherit; text-decoration:none}
     .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
 
-    /* Glass primitives */
-    .glass{
-      background: linear-gradient(180deg, rgba(255,255,255,.085), rgba(255,255,255,.04));
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: var(--shadow2);
-      border-radius: var(--r28);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      position:relative;
-      overflow:hidden;
-    }
-    .glass:before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(600px 260px at 18% 10%, rgba(43,245,166,.16), transparent 60%),
-        radial-gradient(540px 240px at 90% 0%, rgba(92,241,255,.12), transparent 62%),
-        radial-gradient(520px 240px at 50% 120%, rgba(169,139,255,.10), transparent 64%);
-      pointer-events:none;
-      opacity:.9;
-    }
-    .glass > *{position:relative}
-
-    /* Gradient border “ring” */
-    .ring{
-      position:relative;
-      border-radius: var(--r28);
-    }
-    .ring:before{
-      content:"";
-      position:absolute; inset:-1px;
-      border-radius: inherit;
-      padding:1px;
-      background: linear-gradient(135deg, rgba(43,245,166,.7), rgba(92,241,255,.55), rgba(169,139,255,.55));
-      -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-              mask-composite: exclude;
-      opacity:.75;
-      pointer-events:none;
-    }
-
     /* Header */
     header{
       position:sticky; top:0; z-index:60;
-      background: rgba(6,7,16,.55);
-      border-bottom: 1px solid rgba(255,255,255,.10);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      background: rgba(255,255,255,.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(11,18,32,.08);
     }
     .topbar{
       display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
       gap:14px;
+      padding:14px 0;
     }
     .brand{
-      display:flex; align-items:center; gap:12px;
-      min-width:0;
+      display:flex; align-items:center; gap:12px; min-width:0;
     }
     .mark{
-      width:44px; height:44px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(43,245,166,.95), rgba(92,241,255,.65), rgba(169,139,255,.45));
-      box-shadow: 0 18px 55px rgba(0,0,0,.5);
+      width:40px; height:40px; border-radius: 14px;
+      background:
+        radial-gradient(10px 10px at 30% 30%, rgba(255,255,255,.75), transparent 60%),
+        linear-gradient(135deg, rgba(10,122,74,1), rgba(11,95,58,1));
+      box-shadow: 0 10px 22px rgba(10,122,74,.18);
       position:relative;
     }
     .mark:after{
       content:"";
-      position:absolute; inset:9px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.35);
+      position:absolute; inset:8px;
+      border-radius: 12px;
+      border:1px solid rgba(255,255,255,.55);
       opacity:.55;
     }
-    .brandTitle{
-      display:flex; flex-direction:column;
-      line-height:1.05;
+    .brandText{display:flex; flex-direction:column; line-height:1.05; min-width:0}
+    .brandText strong{
+      font-size:13px; letter-spacing:.14em; text-transform:uppercase;
+      white-space:nowrap;
     }
-    .brandTitle strong{
-      font-size:13px; letter-spacing:.12em; text-transform:uppercase;
+    .brandText span{
+      margin-top:4px;
+      font-size:12px;
+      color:var(--muted);
+      white-space:nowrap;
     }
-    .brandTitle span{
-      margin-top:3px; font-size:12px; color:var(--muted);
-    }
-    nav{
-      display:flex; gap:8px; align-items:center; flex-wrap:wrap; justify-content:flex-end;
-    }
+
+    nav{display:flex; gap:8px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
     .navlink{
       font-size:13px;
-      color:rgba(238,242,255,.86);
+      color: rgba(11,18,32,.78);
       padding:9px 10px;
-      border-radius: 14px;
-      border: 1px solid transparent;
+      border-radius: 12px;
+      border:1px solid transparent;
     }
     .navlink:hover{
-      border-color: rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
+      border-color: rgba(11,18,32,.10);
+      background: rgba(255,255,255,.75);
     }
+
     .cta{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      display:inline-flex; align-items:center; justify-content:center;
       padding:10px 12px;
-      border-radius: 16px;
-      font-weight:900;
+      border-radius: 14px;
+      font-weight:800;
       font-size:13px;
-      color:#04050b;
-      background: linear-gradient(135deg, rgba(43,245,166,1), rgba(92,241,255,.95));
-      box-shadow: 0 18px 60px rgba(0,0,0,.55);
+      color:#fff;
+      background: linear-gradient(135deg, rgba(10,122,74,1), rgba(11,95,58,1));
+      box-shadow: 0 10px 24px rgba(10,122,74,.18);
       border:0;
       white-space:nowrap;
     }
-    .cta:hover{filter:saturate(1.05) brightness(1.03)}
+    .cta:hover{filter:brightness(1.02)}
     .hideSm{display:none}
     @media (min-width: 860px){ .hideSm{display:inline-flex} }
+
+    /* Layout sections */
+    section{padding:26px 0}
+    .anchor{scroll-margin-top:90px}
 
     /* Hero */
     .hero{padding:26px 0 10px}
@@ -202,49 +133,47 @@
       display:grid;
       grid-template-columns: 1fr;
       gap:14px;
+      align-items:stretch;
     }
     @media (min-width: 980px){
       .heroGrid{grid-template-columns: 1.15fr .85fr}
     }
-    .heroCard{padding:18px}
-    .kicker{
+
+    .panel{
+      background: rgba(255,255,255,.82);
+      border:1px solid rgba(11,18,32,.10);
+      border-radius: var(--r28);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .heroLeft{padding:22px}
+    .pill{
       display:inline-flex; gap:10px; align-items:center;
       padding:8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      color: var(--muted);
+      border-radius:999px;
+      border:1px solid rgba(11,18,32,.12);
+      background: rgba(255,255,255,.9);
+      color: rgba(11,18,32,.72);
       font-size:13px;
     }
-    .pulse{
+    .dot{
       width:10px; height:10px; border-radius:999px;
-      background: rgba(43,245,166,.95);
-      box-shadow: 0 0 0 0 rgba(43,245,166,.35);
-      animation: pulse 1.8s ease-out infinite;
+      background: rgba(10,122,74,1);
+      box-shadow: 0 0 0 6px rgba(10,122,74,.12);
     }
-    @keyframes pulse{
-      0%{ box-shadow:0 0 0 0 rgba(43,245,166,.35); }
-      70%{ box-shadow:0 0 0 12px rgba(43,245,166,0); }
-      100%{ box-shadow:0 0 0 0 rgba(43,245,166,0); }
-    }
-    .heroTitle{
-      margin:14px 0 8px;
-      font-size: clamp(30px, 5.3vw, 52px);
-      line-height:1.03;
+    h1{
+      margin:14px 0 10px;
+      font-size: clamp(30px, 5.2vw, 54px);
+      line-height:1.02;
       letter-spacing:-0.03em;
     }
-    .gradText{
-      background: linear-gradient(90deg, rgba(43,245,166,1), rgba(92,241,255,1), rgba(169,139,255,1));
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-    }
-    .heroText{
-      margin:0 0 14px;
-      color: rgba(238,242,255,.78);
-      line-height:1.65;
+    .accent{color: var(--brand)}
+    .lead{
+      margin:0 0 16px;
+      color: rgba(11,18,32,.78);
       font-size:15px;
-      max-width: 66ch;
+      line-height:1.7;
+      max-width: 68ch;
     }
     .actions{
       display:flex; flex-direction:column; gap:10px;
@@ -254,87 +183,82 @@
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
       padding:12px 14px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      color: rgba(238,242,255,.92);
+      border-radius: 16px;
+      border:1px solid rgba(11,18,32,.12);
+      background: rgba(255,255,255,.9);
+      color: rgba(11,18,32,.86);
       font-weight:800;
       font-size:14px;
     }
-    .btn:hover{background: rgba(255,255,255,.08)}
+    .btn:hover{background:#fff}
     .btnPrimary{
       border:0;
-      color:#04050b;
-      background: linear-gradient(135deg, rgba(43,245,166,1), rgba(92,241,255,.95));
-      box-shadow: 0 18px 60px rgba(0,0,0,.55);
+      color:#fff;
+      background: linear-gradient(135deg, rgba(10,122,74,1), rgba(11,95,58,1));
+      box-shadow: 0 16px 34px rgba(10,122,74,.18);
     }
-    .btnPrimary:hover{filter:saturate(1.05) brightness(1.03)}
+    .btnPrimary:hover{filter:brightness(1.02)}
 
-    .stats{
-      margin-top:14px;
+    .proof{
+      margin-top:16px;
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr;
       gap:10px;
     }
-    .stat{
-      padding:12px;
-      border-radius: var(--r22);
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.20);
+    @media (min-width: 720px){
+      .proof{grid-template-columns: repeat(3, 1fr)}
     }
-    .stat strong{
-      display:block;
-      font-size:14px;
-      letter-spacing:-0.01em;
+    .proofCard{
+      padding:12px 12px;
+      border-radius: var(--r20);
+      border:1px solid rgba(11,18,32,.10);
+      background: rgba(246,247,248,.75);
     }
-    .stat span{color: var(--muted); font-size:12px}
+    .proofCard strong{display:block; font-size:14px; letter-spacing:-0.01em}
+    .proofCard span{color: rgba(11,18,32,.65); font-size:12px}
 
     /* Right card */
-    .side{padding:16px}
+    .heroRight{padding:16px}
     .media{
-      border-radius: var(--r22);
-      border:1px solid rgba(255,255,255,.10);
+      border-radius: var(--r20);
+      border:1px solid rgba(11,18,32,.10);
       overflow:hidden;
-      background: rgba(255,255,255,.04);
+      background: rgba(246,247,248,.9);
       aspect-ratio: 16/11;
       position:relative;
     }
-    .media img{width:100%; height:100%; object-fit:cover; display:block; filter:saturate(1.05) contrast(1.03)}
+    .media img{width:100%; height:100%; object-fit:cover; display:block}
     .badge{
       position:absolute; left:12px; bottom:12px;
       padding:8px 10px;
       border-radius:999px;
-      background: rgba(6,7,16,.55);
-      border:1px solid rgba(255,255,255,.14);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(255,255,255,.86);
+      border:1px solid rgba(11,18,32,.10);
       font-weight:900;
       font-size:12px;
+      color: rgba(11,18,32,.86);
     }
-    .contactGrid{
-      display:grid; gap:10px; margin-top:12px;
-    }
+    .contactList{display:grid; gap:10px; margin-top:12px}
     .contactItem{
       display:flex; gap:12px; align-items:flex-start;
       padding:12px;
-      border-radius: var(--r22);
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.18);
+      border-radius: var(--r20);
+      border:1px solid rgba(11,18,32,.10);
+      background: rgba(246,247,248,.75);
     }
     .ic{
       width:36px; height:36px; border-radius: 14px;
       display:flex; align-items:center; justify-content:center;
-      background: rgba(255,255,255,.07);
-      border:1px solid rgba(255,255,255,.10);
+      background: #fff;
+      border:1px solid rgba(11,18,32,.10);
       flex:0 0 auto;
     }
-    .contactItem p{margin:0}
-    .label{color: var(--muted); font-size:12px}
-    .value{margin-top:2px; font-weight:900}
+    .label{margin:0; font-size:12px; color: rgba(11,18,32,.65)}
+    .value{margin:2px 0 0; font-weight:900}
     .value a:hover{text-decoration:underline}
+    .fine{color: rgba(11,18,32,.62); font-size:12px; line-height:1.55}
 
     /* Section headings */
-    section{padding:22px 0}
     .headRow{
       display:flex; align-items:flex-end; justify-content:space-between; gap:14px;
       margin-bottom:12px;
@@ -344,14 +268,9 @@
       font-size:20px;
       letter-spacing:-0.01em;
     }
-    .subhead{
-      margin:0;
-      color: var(--muted);
-      font-size:13px;
-      line-height:1.45;
-    }
+    .subhead{margin:0; color: rgba(11,18,32,.65); font-size:13px; line-height:1.45}
 
-    /* Service cards */
+    /* Service grid */
     .grid{
       display:grid;
       grid-template-columns: 1fr;
@@ -362,31 +281,21 @@
     }
     .card{
       border-radius: var(--r28);
-      background: rgba(255,255,255,.045);
-      border:1px solid rgba(255,255,255,.10);
+      border:1px solid rgba(11,18,32,.10);
+      background: rgba(255,255,255,.82);
       box-shadow: var(--shadow2);
       padding:14px;
-      position:relative;
-      overflow:hidden;
     }
-    .card:before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(520px 240px at 10% 0%, rgba(43,245,166,.14), transparent 60%);
-      opacity:.9;
-      pointer-events:none;
-    }
-    .card > *{position:relative}
     .card h3{margin:0 0 8px; font-size:15px}
-    .card p{margin:0; color: rgba(238,242,255,.78); font-size:13px; line-height:1.55}
+    .card p{margin:0; color: rgba(11,18,32,.72); font-size:13px; line-height:1.55}
     .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
     .chip{
       font-size:12px;
       padding:8px 10px;
       border-radius:999px;
-      background: rgba(0,0,0,.18);
-      border:1px solid rgba(255,255,255,.10);
-      color: rgba(238,242,255,.82);
+      background: rgba(246,247,248,.9);
+      border:1px solid rgba(11,18,32,.10);
+      color: rgba(11,18,32,.72);
     }
 
     /* Gallery */
@@ -397,58 +306,56 @@
     }
     @media (min-width: 920px){ .gallery{grid-template-columns: repeat(4, 1fr)} }
     .g{
-      border-radius: var(--r22);
+      border-radius: var(--r20);
       overflow:hidden;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      aspect-ratio: 1 / 1;
+      border:1px solid rgba(11,18,32,.10);
+      background: rgba(246,247,248,.9);
+      aspect-ratio: 1/1;
       position:relative;
     }
-    .g img{width:100%; height:100%; object-fit:cover; display:block; filter:saturate(1.05) contrast(1.03)}
+    .g img{width:100%; height:100%; object-fit:cover; display:block}
     .g:after{
       content:"";
       position:absolute; inset:0;
-      background: linear-gradient(180deg, transparent 62%, rgba(0,0,0,.35));
+      background: linear-gradient(180deg, transparent 62%, rgba(0,0,0,.18));
       pointer-events:none;
     }
 
-    /* Reviews / Embed */
+    /* Reviews / embed */
     .two{
       display:grid;
       grid-template-columns: 1fr;
       gap:12px;
     }
-    @media (min-width: 980px){
-      .two{grid-template-columns: 1.05fr .95fr}
-    }
+    @media (min-width: 980px){ .two{grid-template-columns: 1.05fr .95fr} }
     .quote{
       border-radius: var(--r28);
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.045);
+      border:1px solid rgba(11,18,32,.10);
+      background: rgba(255,255,255,.82);
       box-shadow: var(--shadow2);
       padding:16px;
     }
-    .quote p{margin:0; color: rgba(238,242,255,.82); line-height:1.7}
-    .who{margin-top:10px; color: var(--muted); font-size:13px}
+    .quote p{margin:0; color: rgba(11,18,32,.76); line-height:1.7}
+    .who{margin-top:10px; color: rgba(11,18,32,.62); font-size:13px}
     .embed{
       border-radius: var(--r28);
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.16);
+      border:1px solid rgba(11,18,32,.10);
+      background: rgba(246,247,248,.75);
       box-shadow: var(--shadow2);
       padding:18px;
       display:flex; align-items:center; justify-content:center;
       min-height: 270px;
       text-align:center;
-      color: rgba(238,242,255,.80);
+      color: rgba(11,18,32,.72);
     }
     .embed code{
       display:block;
       margin-top:10px;
       padding:10px 12px;
       border-radius: 16px;
-      background: rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
-      color: rgba(238,242,255,.78);
+      background: rgba(255,255,255,.9);
+      border:1px solid rgba(11,18,32,.10);
+      color: rgba(11,18,32,.72);
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
       font-size:12px;
       overflow:auto;
@@ -466,28 +373,26 @@
     input, textarea{
       width:100%;
       padding:12px 12px;
-      border-radius: 18px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.18);
-      color: rgba(238,242,255,.92);
+      border-radius: 16px;
+      border:1px solid rgba(11,18,32,.12);
+      background: rgba(255,255,255,.92);
+      color: rgba(11,18,32,.90);
       outline:none;
       font-family: inherit;
       font-size:14px;
     }
-    input::placeholder, textarea::placeholder{color: rgba(238,242,255,.55)}
+    input::placeholder, textarea::placeholder{color: rgba(11,18,32,.48)}
     textarea{min-height:120px; resize:vertical}
     .row{
       display:grid; gap:10px;
       grid-template-columns: 1fr;
     }
     @media (min-width: 560px){ .row{grid-template-columns: 1fr 1fr} }
-    .fine{color: var(--muted); font-size:12px; line-height:1.5}
 
-    /* Footer */
     footer{
       padding:22px 0 28px;
-      border-top:1px solid rgba(255,255,255,.10);
-      color: rgba(238,242,255,.70);
+      border-top:1px solid rgba(11,18,32,.08);
+      color: rgba(11,18,32,.62);
       font-size:13px;
     }
     .foot{
@@ -512,37 +417,32 @@
       }
     }
     .float{
-      border-radius: 20px;
+      border-radius: 18px;
       padding:12px 12px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(6,7,16,.60);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      box-shadow: 0 22px 70px rgba(0,0,0,.55);
+      border:1px solid rgba(11,18,32,.12);
+      background: rgba(255,255,255,.86);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
       display:flex; align-items:center; justify-content:center; gap:10px;
       font-weight:900;
+      color: rgba(11,18,32,.86);
     }
     .float.primary{
       border:0;
-      color:#04050b;
-      background: linear-gradient(135deg, rgba(43,245,166,1), rgba(92,241,255,.95));
+      color:#fff;
+      background: linear-gradient(135deg, rgba(10,122,74,1), rgba(11,95,58,1));
     }
-
-    /* Anchor offset */
-    .anchor{scroll-margin-top:90px}
   </style>
 </head>
 
 <body>
-  <div class="aurora" aria-hidden="true"></div>
-  <div class="noise" aria-hidden="true"></div>
-
   <header>
     <div class="wrap">
       <div class="topbar">
         <a class="brand" href="#top" aria-label="Oaklands Fencing & Landscaping">
           <div class="mark" aria-hidden="true"></div>
-          <div class="brandTitle">
+          <div class="brandText">
             <strong>OAKLANDS</strong>
             <span>Fencing &amp; Landscaping</span>
           </div>
@@ -562,89 +462,76 @@
   <main id="top" class="hero">
     <div class="wrap">
       <div class="heroGrid">
-        <div class="ring">
-          <div class="glass heroCard">
-            <span class="kicker"><span class="pulse" aria-hidden="true"></span> Free estimate &amp; advice • Knowledgeable team</span>
+        <div class="panel heroLeft">
+          <span class="pill"><span class="dot" aria-hidden="true"></span> Free estimate &amp; advice • Knowledgeable team</span>
 
-            <h1 class="heroTitle">
-              Premium garden <span class="gradText">fencing</span> &amp; <span class="gradText">landscaping</span>
-              with a clean, modern finish.
-            </h1>
+          <h1>
+            Modern <span class="accent">fencing</span> &amp; <span class="accent">landscaping</span> that lifts your whole garden.
+          </h1>
 
-            <p class="heroText">
-              Oaklands Fencing &amp; Landscaping provides fencing, patios, pathways, turfing and more.
-              Contact us today for a free estimate and practical advice.
-            </p>
+          <p class="lead">
+            Oaklands Fencing &amp; Landscaping provides fencing, landscaping, patios, pathways, turfing, hedge trimming,
+            artificial grass, gravelling, sleepers, decking and jet washing. Contact us today for a free estimate and advice.
+          </p>
 
-            <div class="actions">
-              <a class="btn btnPrimary" href="#contact">Get a Free Estimate</a>
-              <a class="btn" href="https://wa.me/447780133774" target="_blank" rel="noopener">WhatsApp: 07780 133774</a>
-              <a class="btn" href="tel:07780133774">Call Mobile</a>
+          <div class="actions">
+            <a class="btn btnPrimary" href="#contact">Get a Free Estimate</a>
+            <a class="btn" href="https://wa.me/447780133774" target="_blank" rel="noopener">WhatsApp: 07780 133774</a>
+            <a class="btn" href="tel:07780133774">Call Mobile</a>
+          </div>
+
+          <div class="proof" aria-label="Highlights">
+            <div class="proofCard">
+              <strong>Clean finish</strong>
+              <span>Professional workmanship</span>
             </div>
-
-            <div class="stats" aria-label="Highlights">
-              <div class="stat">
-                <strong>Fencing</strong>
-                <span>Panels • Posts • Gates</span>
-              </div>
-              <div class="stat">
-                <strong>Hard Landscaping</strong>
-                <span>Patios • Pathways • Sleepers</span>
-              </div>
-              <div class="stat">
-                <strong>Lawns &amp; Care</strong>
-                <span>Turfing • Artificial grass • Hedges</span>
-              </div>
+            <div class="proofCard">
+              <strong>Clear quotes</strong>
+              <span>Free estimate &amp; advice</span>
+            </div>
+            <div class="proofCard">
+              <strong>Easy to reach</strong>
+              <span>Call, WhatsApp or email</span>
             </div>
           </div>
         </div>
 
-        <aside class="ring">
-          <div class="glass side">
-            <div class="media">
-              <!-- Replace with your best project photo -->
-              <img src="https://images.unsplash.com/photo-1598301257982-0cf014dabbcd?auto=format&fit=crop&w=1400&q=80" alt="Landscaped garden example" />
-              <div class="badge">Free Estimate &amp; Advice</div>
-            </div>
-
-            <div class="contactGrid" aria-label="Contact details">
-              <div class="contactItem">
-                <div class="ic" aria-hidden="true">☎</div>
-                <div>
-                  <p class="label">Telephone</p>
-                  <p class="value"><a href="tel:01403740027">01403 740027</a></p>
-                </div>
-              </div>
-
-              <div class="contactItem">
-                <div class="ic" aria-hidden="true">📱</div>
-                <div>
-                  <p class="label">Mobile</p>
-                  <p class="value"><a href="tel:07780133774">07780 133774</a></p>
-                </div>
-              </div>
-
-              <div class="contactItem">
-                <div class="ic" aria-hidden="true">✉</div>
-                <div>
-                  <p class="label">Email</p>
-                  <p class="value"><a href="mailto:oaklandsfencingandlandscaping@gmail.com">oaklandsfencingandlandscaping@gmail.com</a></p>
-                </div>
-              </div>
-
-              <div class="contactItem">
-                <div class="ic" aria-hidden="true">💬</div>
-                <div>
-                  <p class="label">WhatsApp</p>
-                  <p class="value"><a href="https://wa.me/447780133774" target="_blank" rel="noopener">Message us</a></p>
-                </div>
-              </div>
-            </div>
-
-            <p class="fine" style="margin:10px 0 0">
-              Service areas: add your coverage here (towns/boroughs you serve). This line is intentionally editable.
-            </p>
+        <aside class="panel heroRight">
+          <div class="media">
+            <!-- Replace with your best project photo -->
+            <img src="https://images.unsplash.com/photo-1598301257982-0cf014dabbcd?auto=format&fit=crop&w=1400&q=80" alt="Landscaped garden example" />
+            <div class="badge">Free Estimate &amp; Advice</div>
           </div>
+
+          <div class="contactList" aria-label="Contact details">
+            <div class="contactItem">
+              <div class="ic" aria-hidden="true">☎</div>
+              <div>
+                <p class="label">Telephone</p>
+                <p class="value"><a href="tel:01403740027">01403 740027</a></p>
+              </div>
+            </div>
+
+            <div class="contactItem">
+              <div class="ic" aria-hidden="true">📱</div>
+              <div>
+                <p class="label">Mobile</p>
+                <p class="value"><a href="tel:07780133774">07780 133774</a></p>
+              </div>
+            </div>
+
+            <div class="contactItem">
+              <div class="ic" aria-hidden="true">✉</div>
+              <div>
+                <p class="label">Email</p>
+                <p class="value"><a href="mailto:oaklandsfencingandlandscaping@gmail.com">oaklandsfencingandlandscaping@gmail.com</a></p>
+              </div>
+            </div>
+          </div>
+
+          <p class="fine" style="margin:10px 0 0">
+            Service areas: add your coverage here (towns/boroughs you serve). This line is intentionally editable.
+          </p>
         </aside>
       </div>
     </div>
@@ -669,7 +556,7 @@
         <div class="card" role="listitem">
           <h3>Landscaping</h3>
           <p>Garden improvements and upgrades with a clean, professional finish.</p>
-          <div class="chips"><span class="chip">Design</span><span class="chip">Tidy finish</span><span class="chip">Reliable</span></div>
+          <div class="chips"><span class="chip">Tidy finish</span><span class="chip">Reliable</span><span class="chip">Advice</span></div>
         </div>
 
         <div class="card" role="listitem">
@@ -693,7 +580,7 @@
         <div class="card" role="listitem">
           <h3>Artificial Grass</h3>
           <p>Low-maintenance, always-neat garden solution.</p>
-          <div class="chips"><span class="chip">Durable</span><span class="chip">Clean look</span></div>
+          <div class="chips"><span class="chip">Durable</span><span class="chip">Neat look</span></div>
         </div>
 
         <div class="card" role="listitem">
@@ -746,27 +633,23 @@
       </div>
 
       <div class="two">
-        <div class="quote ring">
-          <div style="padding:16px">
-            <p>“Professional, friendly and the job was finished to a really high standard. The garden looks completely different.”</p>
-            <div class="who">— Example review (replace with real customer feedback)</div>
+        <div class="quote">
+          <p>“Professional, friendly and the job was finished to a really high standard. The garden looks completely different.”</p>
+          <div class="who">— Example review (replace with real customer feedback)</div>
 
-            <hr style="border:0;border-top:1px solid rgba(255,255,255,.10); margin:14px 0">
+          <hr style="border:0;border-top:1px solid rgba(11,18,32,.10); margin:14px 0">
 
-            <p>“Great communication from start to finish. Tidy work and very reliable.”</p>
-            <div class="who">— Example review (replace with real customer feedback)</div>
-          </div>
+          <p>“Great communication from start to finish. Tidy work and very reliable.”</p>
+          <div class="who">— Example review (replace with real customer feedback)</div>
         </div>
 
-        <div class="embed ring">
+        <div class="embed">
           <div>
             <strong>Paste your review embed code here</strong>
-            <div style="margin-top:8px; color: rgba(238,242,255,.72);">
+            <div style="margin-top:8px; color: rgba(11,18,32,.62);">
               Replace this entire box with your Google Reviews widget or Facebook page plugin.
             </div>
-            <code>
-&lt;iframe src="..." width="100%" height="320" style="border:0;" loading="lazy"&gt;&lt;/iframe&gt;
-            </code>
+            <code>&lt;iframe src="..." width="100%" height="320" style="border:0;" loading="lazy"&gt;&lt;/iframe&gt;</code>
           </div>
         </div>
       </div>
@@ -783,68 +666,64 @@
       </div>
 
       <div class="contact2">
-        <div class="ring">
-          <div class="glass" style="padding:16px">
-            <h3 style="margin:0 0 10px">Quick Contact</h3>
+        <div class="panel" style="padding:16px">
+          <h3 style="margin:0 0 10px">Quick Contact</h3>
 
-            <div class="contactGrid">
-              <div class="contactItem">
-                <div class="ic" aria-hidden="true">☎</div>
-                <div>
-                  <p class="label">Telephone</p>
-                  <p class="value"><a href="tel:01403740027">01403 740027</a></p>
-                </div>
-              </div>
-
-              <div class="contactItem">
-                <div class="ic" aria-hidden="true">📱</div>
-                <div>
-                  <p class="label">Mobile</p>
-                  <p class="value"><a href="tel:07780133774">07780 133774</a></p>
-                </div>
-              </div>
-
-              <div class="contactItem">
-                <div class="ic" aria-hidden="true">✉</div>
-                <div>
-                  <p class="label">Email</p>
-                  <p class="value"><a href="mailto:oaklandsfencingandlandscaping@gmail.com">oaklandsfencingandlandscaping@gmail.com</a></p>
-                </div>
-              </div>
-
-              <div class="contactItem">
-                <div class="ic" aria-hidden="true">💬</div>
-                <div>
-                  <p class="label">WhatsApp</p>
-                  <p class="value"><a href="https://wa.me/447780133774" target="_blank" rel="noopener">Message us on WhatsApp</a></p>
-                </div>
+          <div class="contactList">
+            <div class="contactItem">
+              <div class="ic" aria-hidden="true">☎</div>
+              <div>
+                <p class="label">Telephone</p>
+                <p class="value"><a href="tel:01403740027">01403 740027</a></p>
               </div>
             </div>
 
-            <p class="fine" style="margin:10px 0 0">
-              Tip: For quicker quotes, send photos + postcode via WhatsApp.
-            </p>
+            <div class="contactItem">
+              <div class="ic" aria-hidden="true">📱</div>
+              <div>
+                <p class="label">Mobile</p>
+                <p class="value"><a href="tel:07780133774">07780 133774</a></p>
+              </div>
+            </div>
+
+            <div class="contactItem">
+              <div class="ic" aria-hidden="true">✉</div>
+              <div>
+                <p class="label">Email</p>
+                <p class="value"><a href="mailto:oaklandsfencingandlandscaping@gmail.com">oaklandsfencingandlandscaping@gmail.com</a></p>
+              </div>
+            </div>
+
+            <div class="contactItem">
+              <div class="ic" aria-hidden="true">💬</div>
+              <div>
+                <p class="label">WhatsApp</p>
+                <p class="value"><a href="https://wa.me/447780133774" target="_blank" rel="noopener">Message us on WhatsApp</a></p>
+              </div>
+            </div>
           </div>
+
+          <p class="fine" style="margin:10px 0 0">
+            Tip: For quicker quotes, send photos + postcode via WhatsApp.
+          </p>
         </div>
 
-        <div class="ring">
-          <div class="glass" style="padding:16px">
-            <h3 style="margin:0 0 8px">Message Form</h3>
-            <p class="subhead" style="margin-bottom:12px">
-              Press “Send Email” to open a pre-filled email to <strong>oaklandsfencingandlandscaping@gmail.com</strong>.
-            </p>
+        <div class="panel" style="padding:16px">
+          <h3 style="margin:0 0 8px">Message Form</h3>
+          <p class="subhead" style="margin-bottom:12px">
+            Press “Send Email” to open a pre-filled email to <strong>oaklandsfencingandlandscaping@gmail.com</strong>.
+          </p>
 
-            <form id="quoteForm">
-              <div class="row">
-                <input required name="name" placeholder="Your name" />
-                <input required name="phone" placeholder="Your phone number" inputmode="tel" />
-              </div>
-              <input name="address" placeholder="Postcode / area (optional)" />
-              <textarea required name="message" placeholder="What do you need done? (e.g., fence replacement, patio, turfing)"></textarea>
-              <button class="btn btnPrimary" type="submit">Send Email</button>
-              <div class="fine">By sending, you agree Oaklands may contact you to provide an estimate and advice.</div>
-            </form>
-          </div>
+          <form id="quoteForm">
+            <div class="row">
+              <input required name="name" placeholder="Your name" />
+              <input required name="phone" placeholder="Your phone number" inputmode="tel" />
+            </div>
+            <input name="address" placeholder="Postcode / area (optional)" />
+            <textarea required name="message" placeholder="What do you need done? (e.g., fence replacement, patio, turfing)"></textarea>
+            <button class="btn btnPrimary" type="submit">Send Email</button>
+            <div class="fine">By sending, you agree Oaklands may contact you to provide an estimate and advice.</div>
+          </form>
         </div>
       </div>
     </div>
